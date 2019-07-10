@@ -14,8 +14,7 @@ matrix:
   - os: osx
     osx_image: xcode8.3
     language: generic
-    services:
-    - docker
+
     env: PIP=pip3
     before_install:
     - brew update -q
@@ -27,6 +26,5 @@ install:
 - "$PIP install pymupdf"
 
 script:
-- export CIBW_SKIP="cp33-* *i686"
-- test-geo.py
+- python test-geo.py
 
