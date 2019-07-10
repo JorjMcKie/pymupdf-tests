@@ -17,8 +17,8 @@ matrix:
 
     env: PIP=pip3
     before_install:
-    - brew update -q
-    - brew outdated python || brew upgrade python
+    #- brew update -q
+    #- brew outdated python || brew upgrade python
     before_script:
 
 install:
