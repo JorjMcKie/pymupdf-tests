@@ -2,8 +2,7 @@ from __future__ import print_function
 import fitz
 import sys
 
-print("Python:", sys.version)
-print("On platform:", sys.platform, "\n")
+print("Python:", sys.version, "on", sys.platform, "\n")
 print(fitz.__doc__)
 m1 = fitz.Matrix(101)
 m2 = fitz.Matrix(-101)
