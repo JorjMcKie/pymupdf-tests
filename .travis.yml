@@ -11,7 +11,7 @@ matrix:
   include:
   - os: osx
     osx_image: xcode8.3
-    language: generic
+    #language: generic
     env: PIP=pip3
     before_install:
     - brew update -q
@@ -22,4 +22,3 @@ install:
 
 script:
 - python3 test-geo.py
-
