@@ -1,25 +1,21 @@
 language: python
-python: 3.6
+python: 3.7
 dist: xenial
 sudo: true
 
 cache:
   directories:
   - "$HOME/Library/Caches/Homebrew"
-env:
-  global:
 
 matrix:
   include:
   - os: osx
     osx_image: xcode8.3
     language: generic
-
     env: PIP=pip3
     before_install:
-    #- brew update -q
-    #- brew outdated python || brew upgrade python
-    before_script:
+    - brew update -q
+    - brew outdated python || brew upgrade python
 
 install:
 - "$PIP install pymupdf"
