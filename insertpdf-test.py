@@ -1,9 +1,13 @@
 from __future__ import print_function
-import fitz, sys, os
+import fitz
+import sys
+import os
 
-print(sys.version, "on", sys.platform)
+bitness = "64 bit" if sys.maxsize > 2 ** 32 else "32 bit"
+
+print("Python:", sys.version, bitness, "on", sys.platform, "\n")
 print(fitz.__doc__)
-print(__file__, "\n")
+
 flist = ("1.pdf", "2.pdf", "3.pdf", "4.pdf")
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 print("scriptdir", scriptdir)
