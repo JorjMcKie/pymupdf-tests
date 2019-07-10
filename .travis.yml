@@ -26,5 +26,5 @@ install:
 - "$PIP install pymupdf"
 
 script:
-- python test-geo.py
+- python3 test-geo.py
 
