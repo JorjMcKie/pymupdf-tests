@@ -22,3 +22,4 @@ install:
 
 script:
 - python3 test-geo.py
+- python3 insertpdf-test.py
