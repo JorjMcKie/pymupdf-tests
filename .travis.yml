@@ -1,5 +1,5 @@
 language: python
-python: 3.7
+python: 3.6
 dist: xenial
 sudo: true
 
@@ -19,7 +19,6 @@ matrix:
     before_install:
     - brew update -q
     - brew outdated python || brew upgrade python
-    - sudo mkdir -p /usr/local/man && sudo chmod a+rw /usr/local/man
     before_script:
 
 install:
