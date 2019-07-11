@@ -10,16 +10,19 @@ cache:
 matrix:
   include:
   - os: osx
-    osx_image: xcode8.3
-    language: generic
-    env: PIP=pip3
+    language: shell
     before_install:
     - brew update -q
     - brew outdated python || brew upgrade python
 
 install:
-- "$PIP install pymupdf"
+- "pip3 install pymupdf" # Python 3.7
+- "pip install pymupdf" # Python 2.7
 
 script:
+# Python 3.7
 - python3 test-geo.py
 - python3 insertpdf-test.py
+# Python 2.7
+- python test-geo.py
+- python insertpdf-test.py
