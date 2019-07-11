@@ -3,6 +3,7 @@ import fitz
 import sys
 import time
 
+mytime = time.clock if str is bytes else time.perf_counter
 bitness = "64 bit" if sys.maxsize > 2 ** 32 else "32 bit"
 
 print("Python:", sys.version, bitness, "on", sys.platform, "\n")
@@ -17,9 +18,9 @@ print("Checking 'Matrix(%i) * Matrix(-%i) == Identity'." % (alpha, alpha))
 print("Deviation: %g" % abs(m3 - fitz.Identity))
 
 repeats = 10000
-t0 = time.perf_counter()
+t0 = mytime()
 for i in range(repeats):
     m3 = m1 * m2
-t1 = time.perf_counter()
+t1 = mytime()
 quot = (t1 - t0) / repeats
 print("Average multiplication time: %g sec" % quot)
