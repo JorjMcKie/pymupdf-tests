@@ -25,6 +25,8 @@ script:
 # Python 3.7
 - python3 test-geo.py
 - python3 insertpdf-test.py
+- python3 toc-test.py
 # Python 2.7
 - python test-geo.py
 - python insertpdf-test.py
+- python toc-test.py
