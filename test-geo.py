@@ -10,7 +10,10 @@ bitness = "64 bit" if sys.maxsize > 2 ** 32 else "32 bit"
 print("Python:", sys.version, bitness, "on", sys.platform, "\n")
 print(fitz.__doc__)
 
+print("-" * 80)
 print("user directory:", os.path.abspath("~"))
+print("script directory:", os.path.abspath(__file__))
+print("-" * 80)
 alpha = 255
 m1 = fitz.Matrix(alpha)
 m2 = fitz.Matrix(-alpha)
