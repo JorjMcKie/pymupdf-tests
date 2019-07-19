@@ -14,8 +14,6 @@ matrix:
     before_install:
     - brew update -q
     - brew outdated python || brew upgrade python
-  - os: linux
-    language: python
 
 install:
 - "pip3 install pymupdf" # Python 3.7
