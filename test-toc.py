@@ -6,7 +6,6 @@ import sys
 print("")
 print(__file__)
 print("".ljust(30, "-"))
-print("Python:", sys.version)
 print(fitz.__doc__)
 
 datei = "001003ED.pdf"

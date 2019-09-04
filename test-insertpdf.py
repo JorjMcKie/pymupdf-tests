@@ -3,9 +3,6 @@ import fitz
 import sys
 import os
 
-bitness = "64 bit" if sys.maxsize > 2 ** 32 else "32 bit"
-
-print("Python:", sys.version, bitness, "on", sys.platform, "\n")
 print(fitz.__doc__)
 
 flist = ("1.pdf", "2.pdf", "3.pdf", "4.pdf")
