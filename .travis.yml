@@ -24,11 +24,11 @@ script:
 - python3 test-geo.py
 - python3 test-insertpdf.py
 - python3 test-toc.py
-- python3 widgettest.py
-- python3 list-fields.py widgettest.pdf
+- python3 test-fields.py
+- python3 test-field-list.py widgettest.pdf
 # Python 2.7
 - python2 test-geo.py
 - python2 test-insertpdf.py
 - python2 test-toc.py
-- python2 widgettest.py
-- python2 list-fields.py widgettest.pdf
+- python2 test-fields.py
+- python2 test-field-list.py widgettest.pdf
