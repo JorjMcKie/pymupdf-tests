@@ -8,10 +8,6 @@ import fitz
 import time
 
 print(fitz.__doc__)
-if fitz.VersionBind.split(".") < ["1", "16", "0"]:
-    pre_version = True
-else:
-    pre_version = False
 
 t0 = time.clock() if str is bytes else time.process_time()
 
@@ -66,8 +62,7 @@ def flag_values(ff):
 def print_widget(w):
     if not w:
         return
-    if pre_version:
-        w = w.widget
+
     d = w.__dict__
     print("".ljust(80, "-"))
     for k in d.keys():
@@ -90,26 +85,18 @@ print("".ljust(80, "-"))
 print("Form field synopsis of file '%s'" % sys.argv[1])
 print("".ljust(80, "-"))
 for page in doc:
-    if pre_version:
-        w = page.firstAnnot
-    else:
-        w = page.firstWidget
     header_shown = False
-
-    while w:
+    for w in page.widgets():
         if not header_shown:
             print("\nShowing the form fields of page", page.number)
             header_shown = True
         print_widget(w)
-        w = w.next
-        if pre_version:
-            while w is not None and w.type[0] != fitz.ANNOT_WIDGET:
-                w = w.next
+
 doc.close()
 t1 = time.clock() if str is bytes else time.process_time()
 print("total CPU time %g" % (t1 - t0))
 """
-Above script produces the following type of output:
+Above script produces the following output:
 
 Form field synopsis of file 'widgettest.pdf'
 --------------------------------------------------------------------------------
