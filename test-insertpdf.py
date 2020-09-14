@@ -14,7 +14,7 @@ doc = fitz.open()
 for f in flist:
     fname = os.path.join(scriptdir, f)
     x = fitz.open(fname)
-    doc.insertPDF(x, links=1)
+    doc.insertPDF(x, links=1, annots=1)
     fsize = os.path.getsize(fname)
     print(
         "inserted '%s' with %s %s and %s bytes"
